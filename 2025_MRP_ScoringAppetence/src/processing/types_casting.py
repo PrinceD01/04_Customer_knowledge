@@ -1,3 +1,6 @@
+import json
+import pandas as pd
+
 def cast_colmuns_types(df: pd.DataFrame, config_path: str) -> pd.DataFrame:
     """
     Force les types des colonnes d'un DataFrame en fonction du fichier columns.json

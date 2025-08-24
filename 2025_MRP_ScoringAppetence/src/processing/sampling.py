@@ -12,7 +12,6 @@ from imblearn.over_sampling import BorderlineSMOTE
 from imblearn.under_sampling import ClusterCentroids
 
 
-
 # Fonction de sous-échantillonnage
 def apply_under_sampling(df: pd.DataFrame,
                          strate: str = 'FL_ACHAT_PRODUIT',
@@ -159,26 +158,14 @@ def apply_sampling(df: pd.DataFrame,
     Retour :
         df_sampled : pd.DataFrame - Données ré-échantillonnées
     """
-    print('---')
-    print(f"\t Lancement du ré-échantillonnage en {sampling_mode.lower()}-sampling.")
     
-    print()
-    print("\t  > Tx d'acheteurs avant ré-échantillonnage : ", round(100 * df[strate].mean(), 2), '%')
-    print("\t  > Effectifs avant ré-échantillonnage : ")
-    for line in df[strate].squeeze().value_counts().to_string().split('\n'):
-        print("\t\t " + line)
-
-
     if sampling_mode == 'OVER':
         df_sampled = apply_over_sampling(df, strate=strate, sampling_seuil_min=sampling_seuil_min)
     elif sampling_mode == 'UNDER':
         df_sampled = apply_under_sampling(df, strate=strate, sampling_seuil_min=sampling_seuil_min)
     else:
         df_sampled = df.copy()
-        print(f"\t Ré-échantillonnage terminé.")
-        print('---')
 
-        return df_sampled
         
     return df_sampled
 

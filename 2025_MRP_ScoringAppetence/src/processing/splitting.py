@@ -1,6 +1,8 @@
 
+from typing import Tuple
+
 def apply_splitting(df: pd.DataFrame,
-                   target: str='FL_ACHAT_PRODUIT') -> pd.DataFrame:
+                   target: str='FL_ACHAT_PRODUIT') -> Tuple[pd.DataFrame, pd.DataFrame]:
 
     # Split train/val/test datasets
     # Création des datasets 

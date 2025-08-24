@@ -1,5 +1,9 @@
+from typing import Any
+from typing import List
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 
-def encode_nominal(df, nominal_cols):
+def encode_nominal(df: pd.DataFrame, nominal_cols: List[str]) -> pd.DataFrame:
     """
     Encodage nominal par OneHotEncoder.
     """
@@ -13,11 +17,10 @@ def encode_nominal(df, nominal_cols):
 
     df = df.drop(columns=nominal_cols)
     df = pd.concat([df, encoded_df], axis=1)
-
+    
     return df
 
-
-def encode_ordinal(df, ordinal_cols, ordering_dict):
+def encode_ordinal(df: pd.DataFrame, ordinal_cols: List[str], ordering_dict: dict) -> tuple[pd.DataFrame, dict]:
     """
     Encodage ordinal en respectant l'ordre donné.
     """
@@ -44,7 +47,7 @@ def encode_ordinal(df, ordinal_cols, ordering_dict):
     return df, dict_mapping
 
 
-def apply_encoding_from_json(df, json_columns):
+def apply_encoding_from_json(df: pd.DataFrame, json_columns: List[dict]) -> tuple[pd.DataFrame, dict]:
     """
     Applique automatiquement les encodages nominal/ordinal selon le JSON.
     """

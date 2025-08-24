@@ -7,11 +7,10 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
-
 # Import du fichier d'évaluation des modèles
-sys.path.append(os.path.abspath(path="C:/Users/prince.mezuirotimi/OneDrive - Gedeon - SIPAOF/Documents/INTRASIPA/PROJETS/ADDITI - SCORING APPETENCE PRODUIT/03_models"))
 from evaluate_models import evaluate_model
 from scores_grid import get_scores_grid
+
 
 def apply_random_forest(data_train: pd.DataFrame,
                                         data_val: pd.DataFrame,
