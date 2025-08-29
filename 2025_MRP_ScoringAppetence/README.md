@@ -1,4 +1,4 @@
-
+```
 ├── requirements.txt                            <-
 │
 ├── config                                      <- répertoire de config du projet
@@ -27,3 +27,4 @@
 │   │
 │   └── main.py
 └── README.md                                       <- README propre au projet
+```
