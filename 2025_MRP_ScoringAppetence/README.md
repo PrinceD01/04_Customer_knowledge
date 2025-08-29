@@ -5,7 +5,7 @@
 │   └── columns.json                            <- spécification de config des colonnes
 │
 ├── data                                        <- répertoire de stockage des données
-│   └── customer_data.csv                               
+│   └── **PRIVATE**                              
 │           
 ├── outputs
 │   ├── streamlit
